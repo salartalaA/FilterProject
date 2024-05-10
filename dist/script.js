@@ -17,8 +17,6 @@ fetch("https://mindapi.mobo.news/v1/mbt/pricelist/?orderby=maxprice")
   })
 
   .then((data) => {
-    console.log(data);
-
     const sortedDataAsc = data.result
       .slice()
       .sort((a, b) => a.maxprice - b.maxprice);
