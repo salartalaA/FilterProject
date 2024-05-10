@@ -42,8 +42,10 @@ fetch("https://mindapi.mobo.news/v1/mbt/pricelist/?orderby=maxprice")
       dataArray.forEach((user) => {
         let markup = [
           `<div class="flex justify-between p-2">
-            <div id="name" class="mr-0 cursor-pointer">${user.fullnamefa}</div>
-            <div id="price" class="ml-0 cursor-pointer">${Math.round(
+            <div id="name" class="float-right cursor-pointer">${
+              user.fullnamefa
+            }</div>
+            <div id="price" class="float-left cursor-pointer">${Math.round(
               user.maxprice
             )} تومان</div>
           </div>
