@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <title>قیمت خرید موبایل</title>
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <div>
+        <h1 class="text-center mt-8 font-semibold text-sm sm:text-lg">
+          لیست قیمت روز گوشی موبایل (قیمت خرید و فروش)
+        </h1>
+      </div>
+
+      <div
+        class="sm:mx-96 mx-2 mt-8 text-sm sm:text-lg space-x-2 sm:space-x-0 flex justify-between"
+      >
+        <span>مرتب سازی بر اساس:</span>
+
+        <button
+          id="low-price"
+          class="p-1 rounded-xl border-2 border-black hover:bg-red-600 hover:text-white transition-all"
+        >
+          کمترین قیمت
+        </button>
+
+        <button
+          id="high-price"
+          class="p-1 rounded-xl border-2 border-black hover:bg-red-600 hover:text-white transition-all"
+        >
+          بیشترین قیمت
+        </button>
+      </div>
+      <div
+        id="table"
+        class="w-fit sm:w-2/3 float-left ml-6 bg-black text-white p-4 mt-5 rounded-md sm:text-lg text-sm sm:font-normal font-extralight sm:mr-0 mr-4"
+      ></div>
+      <div class="mt-8 mx-8 font-bold w-fit">
+        <div>
+          <div
+            class="bg-slate-50 w-64 sm:block sm:mt-0 mt-6 inline-block sm:w-72 p-2 border-2 border-black rounded-xl h-auto"
+          >
+            <div class="cursor-pointer" id="price-range">بازه ی قیمتی</div>
+            <hr class="border-1 border-black my-4" />
+            <div id="prices" class="hidden">
+              <div>
+                <ul class="block sm:grid grid-cols-2 pl-4 sm:pl-0">
+                  <li
+                    id="10mil"
+                    class="w-full sm:w-32 p-1 bg-black text-white text-center rounded-md text-base font-light cursor-pointer mt-4 transition-all"
+                  >
+                    ۱۰ میلیون تومان
+                  </li>
+                  <li
+                    id="10-11mil"
+                    class="w-full sm:w-32 p-1 bg-black text-white text-center rounded-md text-base font-light cursor-pointer mt-4 transition-all"
+                  >
+                    ۱۰ تا ۱۱ میلیون تومان
+                  </li>
+                  <li
+                    id="11mil"
+                    class="w-full sm:w-32 p-1 bg-black text-white text-center rounded-md text-base font-light cursor-pointer mt-4 transition-all"
+                  >
+                    ۱۱ میلیون تومان
+                  </li>
+                  <li
+                    id="11-12mil"
+                    class="w-full sm:w-32 p-1 bg-black text-white text-center rounded-md text-base font-light cursor-pointer mt-4 transition-all"
+                  >
+                    ۱۱ تا ۱۲ میلیون تومان
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="dist/script.js"></script>
+  </body>
+</html>
