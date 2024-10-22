@@ -11,30 +11,26 @@ priceRange.addEventListener("click", () => {
   prices.classList.toggle("hidden");
 });
 
-fetch("https://mindapi.mobo.news/v1/mbt/pricelist/?orderby=maxprice")
+fetch("https://salarmhmdn.ir/filter/phones")
   .then((res) => {
     return res.json();
   })
 
   .then((data) => {
-    const sortedDataAsc = data.result
-      .slice()
-      .sort((a, b) => a.maxprice - b.maxprice);
+    const sortedDataAsc = data.slice().sort((a, b) => a.maxprice - b.maxprice);
 
-    const sortedDataDesc = data.result
-      .slice()
-      .sort((a, b) => b.maxprice - a.maxprice);
-    const tenPrice = data.result.filter(
-      (user) => user.maxprice >= 1000000000 && user.maxprice < 1100000000
+    const sortedDataDesc = data.slice().sort((a, b) => b.maxprice - a.maxprice);
+    const tenPrice = data.filter(
+      (user) => user.maxprice >= 10000000 && user.maxprice < 11000000
     );
-    const tenElPrice = data.result.filter(
-      (user) => user.maxprice >= 1000000000 && user.maxprice < 1200000000
+    const tenElPrice = data.filter(
+      (user) => user.maxprice >= 11000000 && user.maxprice < 12000000
     );
-    const elPrice = data.result.filter(
-      (user) => user.maxprice >= 1100000000 && user.maxprice < 1200000000
+    const elPrice = data.filter(
+      (user) => user.maxprice >= 12000000 && user.maxprice < 13000000
     );
-    const elTwePrice = data.result.filter(
-      (user) => user.maxprice >= 1100000000 && user.maxprice < 1300000000
+    const elTwePrice = data.filter(
+      (user) => user.maxprice >= 13000000 && user.maxprice < 14000000
     );
     const renderData = (dataArray) => {
       dataArray.forEach((user) => {
@@ -47,7 +43,7 @@ fetch("https://mindapi.mobo.news/v1/mbt/pricelist/?orderby=maxprice")
               user.maxprice
             )} تومان</div>
           </div>
-          <hr class="border-2 border-red-800 my-2">`,
+          <hr class="hr-border my-4">`,
         ];
 
         document
@@ -56,7 +52,7 @@ fetch("https://mindapi.mobo.news/v1/mbt/pricelist/?orderby=maxprice")
       });
     };
 
-    renderData(sortedDataAsc);
+    renderData(data);
 
     highPrice.addEventListener("click", () => {
       document.getElementById("table").innerHTML = "";
